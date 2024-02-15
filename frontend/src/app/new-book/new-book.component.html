@@ -1,0 +1,84 @@
+<div *ngIf="message == 'ok' && user.type == 'citalac'" class="alert alert-success" role="alert">
+    Zahtev za dodavanje nove knjige je poslat.
+</div>
+<div *ngIf="message == 'ok' && user.type == 'moderator'" class="alert alert-success" role="alert">
+    Knjiga "{{title}}" je dodata u biblioteku.
+</div>
+
+<div class="new_book">
+<div class="table-responsive">
+<form class="new_book-form" ngNativeValidate #form>
+    <table class="table">
+        
+        <tr>
+            <td class="row">
+                Naslov:
+            </td>
+            <td>
+                <input type="text" name="title" [(ngModel)]="title" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Autor/i:
+            </td>
+            <td>
+                <input type="text" name="author" [(ngModel)]="author" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Zanr:
+            </td>
+            <td>
+                <select multiple required size="3" [(ngModel)]="genre_input" [ngModelOptions]="{standalone: true}" (change)="changeSelect()">
+                    <option [disabled]="genre_input.length == 3 && !genre.includes('istorijska fikcija')" value="istorijska fikcija">Istorijska fikcija</option>
+                    <option [disabled]="genre_input.length == 3 && !genre.includes('istorijski roman')" value="istorijski roman">Istorijski roman</option>
+                    <option [disabled]="genre_input.length == 3 && !genre.includes('fantastika')" value="fantastika">Fantastika</option>
+                    <option [disabled]="genre_input.length == 3 && !genre.includes('drama')" value="drama">Drama</option>
+                    <option [disabled]="genre_input.length == 3 && !genre.includes('tragedija')" value="tragedija">Tragedija</option>
+                  </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Izdavac:
+            </td>
+            <td>
+                <input type="text" name="publisher" [(ngModel)]="publisher"  required>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Godina izdanja:
+            </td>
+            <td>
+                <input type="text" name="year" [(ngModel)]="year"  required>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Jezik:
+            </td>
+            <td>
+                <input type="text" name="language" [(ngModel)]="language"  required>
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Slika:
+            </td>
+            <td>
+                <input type="file" name="image" (change)="onFileSelected($event)">
+            </td>
+        </tr>
+            <td *ngIf="user.type == 'citalac'">
+                <button class="my_btn" (click)="form.checkValidity()? addBookRequest() : null">Predlozi</button>
+            </td>
+            <td *ngIf="user.type == 'moderator' || user.type == 'admin'">
+                <button class="my_btn" (click)="form.checkValidity()? addBook() : null">Dodaj</button>
+            </td>
+    </table>
+</form>
+</div>
+</div>

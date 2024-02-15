@@ -1,0 +1,98 @@
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="profile" *ngIf="user_type != 'guest'"><img src="../../assets/{{user_img}}" style="height: 30px"></a>
+            <img *ngIf="user_type == 'guest'" src="../../assets/{{user_img}}" style="height: 30px">
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'citalac'">
+          <a class="nav-link" href="citalac">Pocetna</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'guest'">
+          <a class="nav-link" href="login">Prijavi se</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'guest'">
+            <a class="nav-link" href="signup">Registruj se</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest'">
+          <a class="nav-link" href="change_password">Promeni lozinku</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest' && user_type != 'admin'">
+          <a class="nav-link" href="new_book">Dodaj knjigu</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'moderator'">
+          <a class="nav-link" href="book_request">Zahtevi</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'admin'">
+          <a class="nav-link" href="about_users">O korisnicima</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type == 'admin'">
+          <a class="nav-link" href="about_books">O knjigama</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest' && user_type != 'admin'">
+          <a class="nav-link" href="zaduzenja">Zaduzenja</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest' && user_type != 'admin'">
+          <a class="nav-link" href="istorijat">Istorija zaduzenja</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest'">
+          <a class="nav-link" href="search">Pretrazi</a>
+        </li>
+        <li class="nav-item" *ngIf="user_type != 'guest'">
+          <button (click)="logout()">Odjavi se</button>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Trazi" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0">Trazi</button>
+      </form>
+    </div>
+</nav>-->
+
+
+<div class="header">
+  <div class="header-left">
+    <!--Profil-->
+    <span *ngIf="user_type != 'guest'"><a href="profile" *ngIf="user_type != 'guest'"><img src="../../assets/{{user_img}}"></a></span>
+    <img *ngIf="user_type == 'guest'" src="../../assets/{{user_img}}">
+    <!--Pocetna-->
+    <a class="link" href="" *ngIf="user_type == 'guest' || user_type == 'admin'">Pocetna<span class="sr-only">(current)</span></a>
+    <a class="link" href="citalac" *ngIf="user_type == 'citalac' || user_type == 'moderator'">Pocetna<span class="sr-only">(current)</span></a>
+    <!--Prijavi se-->
+    <a class="link" href="login" *ngIf="user_type == 'guest'">Prijavi se</a>
+    <!--Registruj se-->
+    <a class="link" href="signup" *ngIf="user_type == 'guest'">Registruj se</a>
+    <!--Promeni lozinku-->
+    <a class="link" href="change_password" *ngIf="user_type != 'guest' && user.blocked == false">Promeni lozinku</a>
+    <!--Predlozi/Dodaj knjigu-->
+    <a class="link" href="new_book" *ngIf="user_type == 'citalac' && user.blocked == false">Predlozi knjigu</a>
+    <a class="link" href="new_book" *ngIf="user_type == 'moderator' && user.blocked == false">Dodaj knjigu</a>
+    <!--Zaduzenja-->
+    <a class="link" href="zaduzenja" *ngIf="user_type != 'guest' && user_type != 'admin'">Zaduzenja</a>
+    <!--Istorija zaduzenja-->
+    <a class="link" href="istorijat" *ngIf="user_type != 'guest' && user_type != 'admin'">Istorija zaduzenja</a>
+    <!--Zahtevi-->
+    <a class="link" href="book_request" *ngIf="user_type == 'moderator' && user.blocked == false">Zahtevi</a>
+    <!--O korisnicima-->
+    <a class="link" href="about_users" *ngIf="user_type == 'admin'" >O korisnicima</a>
+    <!--O knjigama-->
+    <a class="link" href="about_books" *ngIf="user_type == 'admin'">O knjigama</a>
+    <!--Pretraga-->
+    <a class="link" href="search" *ngIf="user_type != 'guest' && user.blocked == false">Pretrazi</a>
+    
+  </div>
+  <span class="header-right" style="display: inline-flex;">
+    <!--Osnovna pretraga-->
+    <input *ngIf="user_type == 'guest' || user.blocked == true" class="form-control mr-sm-2" type="search" placeholder="Trazi" aria-label="Search" [(ngModel)]="search_param">
+    <button *ngIf="user_type == 'guest' || user.blocked == true" class="btn btn-outline-info my-2 my-sm-0" (click)="search()">Trazi</button>
+    <!--Odjavi se-->
+    <button *ngIf="user_type != 'guest'" class="btn btn-outline-info my-2 my-sm-0" (click)="logout()" style="width: 150px; margin-left: 1%">Odjavi se</button>
+  </span>
+</div>

@@ -1,0 +1,35 @@
+<div class="table-responsive">
+<table class="table" *ngIf="all_users.length > 0">
+    <tr>
+        <th>Slika</th>
+        <th>Korisnicko ime</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Adresa</th>
+        <th>Telefon</th>
+        <th>Mejl</th>
+        <th>Tip</th>
+    </tr>
+    <tr *ngFor="let u of all_users; let i = index">
+        <td><img src="../../assets/{{u.image}}" alt="Slika"></td>
+        <td>{{u.username}}</td>
+        <td>{{u.firstname}}</td>
+        <td>{{u.lastname}}</td>
+        <td>{{u.address}}</td>
+        <td>{{u.tel}}</td>
+        <td>{{u.mail}}</td>
+        <td>{{u.type}}</td>
+        <td><button class="my_btn" (click)="updateUser(u)" *ngIf="u.registered == true">Azuriraj</button></td>   
+        <td><button class="my_btn" (click)="deleteUser(u)">Obrisi</button></td> 
+        <td *ngIf="u.registered == true">
+            <button class="my_btn" *ngIf="u.blocked == false" (click)="blockUser(u)">Blokiraj</button>
+            <button class="my_btn" *ngIf="u.blocked == true" (click)="unblockUser(u)">Odblokiraj</button>
+        </td>
+        <td><button class="my_btn" *ngIf="u.registered == false" (click)="registerUser(u)">Dodaj</button></td>    
+    </tr>
+</table>
+</div>
+
+<div>
+    <button class="my_btn" (click)="addUser()" style="width: fit-content;">Dodaj novog korisnika</button>
+</div>

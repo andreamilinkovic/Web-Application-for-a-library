@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "630de106b79cae6891483238"
+  },
+  "book": "3",
+  "person": "pera",
+  "accepted": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630de298b79cae68914832f6"
+  },
+  "book": "3",
+  "person": "paja",
+  "accepted": false,
+  "__v": 0
+}]

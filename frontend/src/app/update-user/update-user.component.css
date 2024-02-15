@@ -1,0 +1,36 @@
+.user {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    width: 100%
+}
+
+.table{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    font-weight: bold;
+}
+
+.my_btn{
+    text-transform: uppercase;
+    outline: 0;
+    background: #0a1121d9;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+}
+
+.my_btn:active {
+    background: #162340d9;
+}

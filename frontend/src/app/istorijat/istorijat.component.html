@@ -1,0 +1,45 @@
+<div class="istorijat" *ngIf="message == ''">
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>Naslov</th>
+        <th>Autor/i</th>
+        <th>Datum zaduzivanja</th>
+        <th>Datum razduzivanja</th>
+        <th *ngIf="user.blocked == false">Detalji</th>
+    </tr>
+    <tr *ngFor="let b of my_history">
+        <td>
+            {{b.title}}
+        </td>
+        <td>
+            {{b.author}}
+        </td>
+        <td>
+            {{b.booked}}
+        </td>
+        <td>
+            {{b.returned}}
+        </td>
+        <td>
+            <button class="btn" (click)="book(b.book)" *ngIf="user.blocked == false">O knjizi</button>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<div class="sort">
+<span>Sortitaj po:</span>
+<select [(ngModel)]="sort_by" (change)="sort()">
+    <option name="title" value="title">Naslovu</option>
+    <option name="author" value="author">Autoru</option>
+    <option name="booked" value="booked">Datumu zaduzivanja</option>
+    <option name="returned" value="returned">Datumu razduzivanja</option>
+</select>
+</div>
+</div>
+</div>
+
+<div *ngIf="message == 'Do sada niste zaduzivali knjige.'" class="alert alert-success" role="alert">
+    {{message}}
+</div>

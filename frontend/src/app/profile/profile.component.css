@@ -1,0 +1,122 @@
+.profile {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    width: 100%;
+    font-family: Monaco;
+}
+
+.table{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    font-weight: bold;
+}
+
+.my_btn{
+    text-transform: uppercase;
+    outline: 0;
+    background: #0a1121d9;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+}
+
+.my_btn:active {
+    background: #162340d9;
+}
+
+
+.text {
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    font-family: Monaco;
+}
+
+
+
+.wrapper{
+    width: 100%;
+    overflow: auto;
+}
+
+.grafico{
+    margin-left: 2%;
+    margin-bottom: 10px;
+}
+
+.grafico .content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 160px;
+    text-align: center;
+}
+
+.grafico .content span{
+    font-family: 'Roboto';
+    font-size: 13px;
+    color: #707070;
+}
+
+.grafico .line{
+    background-color: #CCCCCC;
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.grafico .legends{
+    display: flex;
+    flex-direction: row;
+    color: #707070;
+    font-family: 'Roboto';
+    font-size: 12px;
+    text-align: center;
+}
+
+.grafico .legends span{
+    width: 60px;
+    margin:0 15px;
+}
+
+.grafico .bars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.grafico .bar{
+    width: 60px;
+    min-height: 2px;
+    margin:0 15px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.grafico .bar:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.20);
+}
+
+@media screen and (max-width: 900px){
+    .grafico {
+        scroll-margin-bottom: 10;
+    }
+  }

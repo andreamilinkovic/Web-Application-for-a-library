@@ -1,0 +1,7 @@
+*** bootstrap ***
+ng add @ng-bootstrap/ng-bootstrap
+
+*** multer ***
+npm install --save multer 
+npm install --save @types/multer
+npm install --save @tsed/multipartfiles

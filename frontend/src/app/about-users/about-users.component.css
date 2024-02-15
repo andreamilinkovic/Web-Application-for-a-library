@@ -1,0 +1,46 @@
+.search{
+    font-family: Monaco;
+    margin: 1%;
+    align-items: center;
+}
+
+.search span{
+    margin-right: 1%;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.table th{
+    text-transform: uppercase;
+    align-items: center;
+    font-style: italic
+}
+
+.table td{
+    vertical-align: middle;
+}
+
+img{
+    max-height: 50px;
+}
+
+.my_btn{
+    text-transform: uppercase;
+    outline: 0;
+    background: #0a1121d9;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    margin: 1%;
+    width: 100px
+}
+
+.my_btn:active {
+    background: #162340d9;
+}

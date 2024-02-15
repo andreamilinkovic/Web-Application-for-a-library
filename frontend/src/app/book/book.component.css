@@ -1,0 +1,85 @@
+
+img{
+    max-height: 480px;
+    max-width: 300px;
+}
+
+.book {
+    display: flex;
+    margin: 1%;
+    width: 100%;
+}
+
+.table {
+    width: 25rem;
+    text-align: left;
+}
+
+.info {
+    display: block;
+}
+
+td {
+    margin: 1%;
+}
+
+.row {
+    font-weight: bold;
+}
+
+.comm {
+    display: block;
+}
+
+.buttons {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.new_comm {
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.comment {
+    display: block
+}
+
+.rating {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.checked {
+    color: rgb(241, 241, 89);
+}
+
+.my_btn{
+    text-transform: uppercase;
+    outline: 0;
+    background: #0a1121d9;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 12px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+}
+
+.my_btn:active {
+    background: #162340d9;
+}
+
+@media screen and (max-width: 900px){
+    .book{
+        float: none;
+        display: block;
+    }
+  }

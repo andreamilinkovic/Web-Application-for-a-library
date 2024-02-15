@@ -1,0 +1,77 @@
+[{
+  "_id": {
+    "$oid": "62fcbbaad559b1e4379a82e8"
+  },
+  "username": "pera",
+  "password": "Pera123?",
+  "firstname": "Petar",
+  "lastname": "Peric",
+  "address": "Nehruova 45, Beograd",
+  "tel": "061/11-11-111",
+  "mail": "pera@gmail.com",
+  "type": "citalac",
+  "image": "pera.jpg",
+  "registered": true,
+  "blocked": false
+},{
+  "_id": {
+    "$oid": "62fcbbffd559b1e4379a82ed"
+  },
+  "username": "maja",
+  "password": "Maja123?",
+  "firstname": "Marija",
+  "lastname": "Maric",
+  "address": "Narodnih heroja 91, Beograd",
+  "tel": "062/22-22-222",
+  "mail": "maja@gmail.com",
+  "type": "citalac",
+  "image": "maja.png",
+  "registered": true,
+  "blocked": false
+},{
+  "_id": {
+    "$oid": "62fcbc16d559b1e4379a82f2"
+  },
+  "username": "sara",
+  "password": "Sara123?",
+  "firstname": "Sara",
+  "lastname": "Saric",
+  "address": "Gandijeva 45, Beograd",
+  "tel": "063/33-33-333",
+  "mail": "sara@gmail.com",
+  "type": "admin",
+  "image": "sara.png",
+  "registered": true,
+  "blocked": false
+},{
+  "_id": {
+    "$oid": "62fcbc50d559b1e4379a82f7"
+  },
+  "username": "paja",
+  "password": "Paja123?",
+  "firstname": "Pavle",
+  "lastname": "Pajic",
+  "address": "Bulevar Mihaila Pupina 99, Beograd",
+  "tel": "064/44-44-444",
+  "mail": "paja@gmail.com",
+  "type": "moderator",
+  "image": "paja.png",
+  "registered": true,
+  "blocked": false
+},{
+  "_id": {
+    "$oid": "63064a82687ad085452c92e1"
+  },
+  "username": "jova",
+  "password": "Jova123?",
+  "firstname": "Jovan",
+  "lastname": "Jovanovic",
+  "address": "Vojvodjanska 15, Beograd",
+  "tel": "065/55-55-555",
+  "mail": "jova@gmail.com",
+  "type": "citalac",
+  "image": "guest.ico",
+  "registered": false,
+  "blocked": false,
+  "__v": 0
+}]

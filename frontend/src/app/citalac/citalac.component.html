@@ -1,0 +1,30 @@
+<div class="citalac">
+
+<div class="card" style="width: 15rem;">
+    <img class="card-img-top" src="../../assets/{{book_of_the_day.image}}" alt="{{book_of_the_day.title}}">
+    <div class="card-body">
+      <h5 class="card-title">{{book_of_the_day.title}}</h5>
+      <h6 class="card-title">{{book_of_the_day.author}}</h6>
+      <h6 class="card-text"><span>Ocena:</span> {{grade}}</h6>
+    </div>
+</div>
+
+<br/>
+
+<div>
+    <div class="notifications">Obavestenja:</div>
+    <div *ngFor="let b of rented_books">
+        <div *ngIf="isDeadlineSoon(b)" class="alert alert-warning" role="alert">Rok za vracanje knjige "{{b.title}}" istice u naredna dva dana.</div>
+        <div *ngIf="isOverDeadline(b)" class="alert alert-danger" role="alert">Rok za vracanje knjige "{{b.title}}" je istekao.</div>
+    </div>
+    <div *ngIf="maxRented()" class="alert alert-warning" role="alert">Zaduzili ste maksimalan broj knjiga.</div>
+    <div *ngFor="let b of recommended_books">
+        <div class="alert alert-success" role="alert">Knjiga "{{b.title}}" koju ste predlozili je dodata u biblioteku.</div>
+    </div>
+    <div *ngFor="let b of my_reservations">
+        <div class="alert alert-success" role="alert">Knjiga "{{b}}" koju ste rezervisali je sada dostupna.</div>
+    </div>
+    <div *ngIf="user.blocked == true" class="alert alert-danger" role="alert">Blokirani ste od strane admina.</div>
+</div>
+
+</div>

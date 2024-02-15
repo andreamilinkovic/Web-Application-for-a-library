@@ -1,0 +1,81 @@
+<div class="search">
+
+<span>Pretrazi po:</span>
+<select [(ngModel)]="search_by">
+    <option value="basic">Naslovu/Autoru</option>
+    <option value="genre">Zanru</option>
+    <option value="year">Godini izdanja</option>
+    <option value="publisher">Izdavacu</option>
+</select>
+<br/>
+<br/>
+
+<div class="basic" *ngIf="search_by == 'basic'">
+    <div class="input-group mb-3">
+        <input class="form-control" placeholder="Naslov/Autor" type="text" name="search_param" [(ngModel)]="search_param">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="search()">Trazi</button>
+        </div>
+    </div>    
+</div>
+
+<div class="genre" *ngIf="search_by == 'genre'">
+<div class="input-group mb-3">
+    <select class="custom-select" id="inputGroupSelect02" multiple [(ngModel)]="search_genre"  size="3">
+      <option value="istorijska fikcija">Istorijska fikcija</option>
+      <option value="istorijski roman">Istorijski roman</option>
+      <option value="fantastika">Fantastika</option>
+      <option value="drama">Drama</option>
+      <option value="tragedija">Tragedija</option>
+    </select>
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="search()">Trazi</button>
+    </div>
+</div>
+</div>
+
+
+<div class="publisher" *ngIf="search_by == 'publisher'">
+    <div class="input-group mb-3">
+        <input class="form-control" placeholder="Izdavac" type="text" name="search_param" [(ngModel)]="search_param">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="search()">Trazi</button>
+        </div>
+    </div>
+</div>
+
+<div class="year" *ngIf="search_by == 'year'">
+    <div class="input-group mb-3">
+        <span>Od:</span> <input class="form-control" placeholder="Godina" type="text" name="search_from" [(ngModel)]="search_from">
+        <span style="margin-left: 1%">Do:</span> <input class="form-control" placeholder="Godina" type="text" name="search_to" [(ngModel)]="search_to">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="search()">Trazi</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="table-responsive">
+<table class="table" *ngIf="searched_books.length > 0">
+    <tr>
+        <th>Korice</th>
+        <th>Naslov</th>
+        <th>Autor</th>
+        <th>Zanr</th>
+        <th>Izdavac</th>
+        <th>Godina</th>
+        <th>Jezik</th>
+        <th>Detalji</th>
+    </tr>
+    <tr *ngFor="let b of searched_books">
+            <td><img src="../../assets/{{b.image}}" alt="Slika"></td>
+            <td>{{b.title}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.genre}}</td>
+            <td>{{b.publisher}} </td>
+            <td>{{b.year}}</td>
+            <td>{{b.language}}</td> 
+            <td><button class="my_btn" (click)="book(b.id)">O knjizi</button></td>      
+    </tr>
+</table>
+</div>

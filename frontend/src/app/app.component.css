@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(204, 219, 230);
+    height: 100%;
+    min-height: 100vh;
+
+    font-family: Monaco;
+}

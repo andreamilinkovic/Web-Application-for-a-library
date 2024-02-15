@@ -1,0 +1,39 @@
+.istorijat{
+    margin-left: 1%;
+    font-family: Monaco;
+}
+
+th{
+    text-transform: uppercase;
+    align-items: center;
+    font-style: italic
+}
+
+button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #0a1121d9;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button:active {
+    background: #162340d9;
+}
+
+.sort span{
+    margin-left: 1%;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.sort select{
+    margin-left: 1%;
+    height: 4vh;
+}

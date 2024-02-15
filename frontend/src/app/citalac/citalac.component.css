@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    background-color: rgb(221, 229, 237);
+    border-radius: 5%;
+}
+
+.card-img-top {
+    border-radius: 5%;
+    max-height: 300px;
+}
+
+.card-text{
+    font-style: italic;
+}
+
+.card-text span {
+    font-style: italic;
+    font-weight: 1000;
+    margin-right: 2%;
+}
+
+.notifications {
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    margin: 1%;
+}

@@ -1,0 +1,14 @@
+<div *ngIf="msg_flag == true" class="alert alert-danger" role="alert">
+  {{message}}
+</div>
+
+<div class="login">
+    <div class="form">
+      <form class="login-form" ngNativeValidate #form>
+        <input type="text" name="username" placeholder="Korisnicko ime" required [(ngModel)]="username" />
+        <input type="password" name="password" placeholder="Lozinka" required [(ngModel)]="password"/>
+        <button (click)="form.checkValidity()? login() : null">Prijavi se</button>
+      </form>  
+    </div>
+  </div>
+<br/>

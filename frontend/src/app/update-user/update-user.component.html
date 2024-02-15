@@ -1,0 +1,78 @@
+<div *ngIf="message == 'Korisnik sa zadatim mejlom vec postoji.'" class="alert alert-danger" role="alert">
+    {{message}}
+</div>
+
+<div class="user">
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <td class="row">
+            Ime:
+        </td>
+        <td>
+            <input type="text" name="firstname" [(ngModel)]="firstname">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Prezime:
+        </td>
+        <td>
+            <input type="text" name="lastname" [(ngModel)]="lastname">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Adresa:
+        </td>
+        <td>
+            <input type="text" name="address" [(ngModel)]="address">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Telefon:
+        </td>
+        <td>
+            <input type="text" name="tel" [(ngModel)]="tel">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Mejl:
+        </td>
+        <td>
+            <input type="text" name="mail" [(ngModel)]="mail">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Tip:
+        </td>
+        <td>
+            <select [(ngModel)]="type">
+                <option value="citalac">citalac</option>
+                <option value="moderator">moderator</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Slika:
+        </td>
+        <td>
+            <input type="file" name="image" (change)="onFileSelected($event)">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button class="my_btn" (click)="updateProfile()">Azuriraj</button>
+        </td>
+        <td>
+            <button class="my_btn" (click)="dismiss()">Otkazi</button>
+        </td>
+    </tr>
+</table>
+</div>
+</div>

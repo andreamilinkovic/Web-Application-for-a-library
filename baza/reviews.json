@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "630dd192b79cae6891482f3c"
+  },
+  "book": "1",
+  "username": "pera",
+  "grade": 10,
+  "comment": "Najbolja knjiga srpske knjizevnosti.",
+  "date": "2022-8-30 11:0:2",
+  "__v": 0,
+  "edited": true
+},{
+  "_id": {
+    "$oid": "630dd55fb79cae689148301a"
+  },
+  "book": "4",
+  "username": "pera",
+  "date": "2022-8-30 11:16:15",
+  "__v": 0,
+  "comment": "Zanimljiva knjiga o tragicnoj ljubavi jedne zene.",
+  "edited": true,
+  "grade": 8
+},{
+  "_id": {
+    "$oid": "630dda6cb79cae68914830eb"
+  },
+  "book": "4",
+  "username": "maja",
+  "grade": 9,
+  "comment": "Sve preporuke.",
+  "date": "2021-12-30 11:37:48",
+  "__v": 0,
+  "edited": false
+}]

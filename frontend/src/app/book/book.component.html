@@ -1,0 +1,173 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="book">
+
+<div class="info"> 
+
+    <td class="image">
+        <img src="../../assets/{{book.image}}">
+    </td>
+
+    <div class="table-responsive">
+    <table class="table">
+        <tr>
+            
+        </tr>
+        <tr>
+            <td class="row">
+                Naslov:
+            </td>
+            <td>
+                {{book.title}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Autor/i:
+            </td>
+            <td>
+                {{book.author}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Zanr:
+            </td>
+            <td>
+                {{book.genre}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Izdavac:
+            </td>
+            <td>
+                {{book.publisher}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Godina:
+            </td>
+            <td>
+                {{book.year}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Jezik:
+            </td>
+            <td>
+                {{book.language}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Na stanju:
+            </td>
+            <td>
+                {{book.in_stock}}
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Ocena:
+            </td>
+            <td>
+                {{grade}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="my_btn" (click)="updateBook()" *ngIf="user.type == 'moderator'">Izmeni podatke</button>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+</div> 
+
+
+<div class="comm">
+
+<div class="buttons">
+    <div *ngIf="!is_booked && (book.in_stock > 0) && !over_deadline && rented_books.length < 3">
+        <button class="my_btn" (click)="zaduzi()">Zaduzi</button>
+    </div>
+    <div *ngIf="!is_booked && (book.in_stock  == 0)">
+        <button class="my_btn" (click)="rezervisi()">Rezervisi</button>
+    </div>
+</div>
+
+<!--new_comm-->
+<div class="new_comm">
+<div *ngIf="is_rented && !is_commented">
+    <textarea maxlength="1000" placeholder="Komentar" [(ngModel)]="comment"></textarea> <br/>
+    <ngb-rating [(ngModel)]="grade_input"></ngb-rating><br/>
+    <button class="my_btn" (click)="addReview()">Dodaj komentar</button>
+</div>
+
+<div *ngIf="is_rented && is_commented">
+    <textarea maxlength="1000" placeholder="Komentar" [(ngModel)]="comment"></textarea> <br/>
+    <ngb-rating [(ngModel)]="grade_input"></ngb-rating><br/>
+    <button class="my_btn" (click)="updateReview()">Izmeni komentar</button>
+</div>
+</div>
+
+<!--Obavestenja-->
+<div *ngIf="book_reviews.length == 0" class="alert alert-info" role="alert">
+    Jos uvek nema komentara.
+</div>
+<div *ngIf="is_booked" class="alert alert-success" role="alert">
+    Vec ste zaduzili ovu knjigu.
+</div>
+<div *ngIf="over_deadline" class="alert alert-danger" role="alert">
+    Imate knjige na zaduzenju kojima je istekao rok za vracanje.
+</div>
+<div *ngIf="rented_books.length >= 3" class="alert alert-danger" role="alert">
+    Imate maksimalan broj knjiga na zaduzenju.
+</div>
+
+<!--comments-->
+<div class="card-deck">
+    <div class="comments" *ngFor="let r of book_reviews">
+        <div class="card text-white bg-dark mb-2" style="width: 20rem;">
+            <div class="card-header">{{r.username}}</div>
+            <div class="rating">
+                <span *ngFor="let i of stars">
+                    <span class="fa fa-star checked" style="display: inline-block" *ngIf="i <= r.grade"></span>
+                    <span class="fa fa-star" style="display: inline-block" *ngIf="i > r.grade"></span>
+                </span>
+            </div>
+            <div class="card-body">
+              <h5 style="font-size: 14px" class="card-title">{{r.comment}}</h5>
+            </div>
+            <div  class="card-footer">
+                <div style="display: inline-flexbox">
+                    <div style="font-size: 10px; text-align: right;">{{r.date}}</div>
+                    <div *ngIf="r.edited == true" style="font-size: 12px; text-align: left;"><small class="text-muted">izmenjen</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+    <!--
+
+    <div *ngIf="is_rented && !is_commented">
+        <textarea maxlength="1000" placeholder="Komentar" [(ngModel)]="comment"></textarea> <br/>
+        <input type="text" name="grade" placeholder="Ocena" [(ngModel)]="grade_input">
+        <button class="my_btn" (click)="addReview()">Dodaj komentar</button>
+    </div>
+    
+    <div *ngIf="is_rented && is_commented">
+        <textarea maxlength="1000" placeholder="Komentar" [(ngModel)]="comment"></textarea> <br/>
+        <input type="text" name="grade" placeholder="Ocena" [(ngModel)]="grade_input">
+        <button class="my_btn" (click)="updateReview()">Izmeni komentar</button>
+    </div>-->
+
+
+

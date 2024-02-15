@@ -1,0 +1,28 @@
+<div *ngIf="message == 'Lozinka i potvrda lozinke se razlikuju.'" class="alert alert-danger" role="alert">
+    {{message}}
+</div>
+<div *ngIf="message == 'Korisnik je vec registrovan.'" class="alert alert-danger" role="alert">
+    {{message}}
+</div>
+<div *ngIf="message == 'Zahtev za registraciju je poslat.'" class="alert alert-success" role="alert">
+    {{message}}
+</div>
+
+<div class="signup">
+    <div class="form">
+      <form class="signup-form" ngNativeValidate #form>
+        <input type="text" name="username" placeholder="Korisnicko ime" required [(ngModel)]="username">
+        <input type="password" name="password1" placeholder="Lozinka" required [(ngModel)]="password" ngModel pattern="^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])[a-zA-Z].{7,11}$">
+        <input type="password" name="password2" placeholder="Potvrdi lozinku" required [(ngModel)]="password_check" ngModel pattern="^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])[a-zA-Z].{7,11}$">
+        <input type="text" name="firstname" placeholder="Ime" required [(ngModel)]="firstname">
+        <input type="text" name="lastname" placeholder="Prezime" required [(ngModel)]="lastname">
+        <input type="text" name="address" placeholder="Ulica i broj, grad" required [(ngModel)]="address">
+        <input type="text" name="tel" placeholder="Telefon: 060/00-00-000" required [(ngModel)]="tel">
+        <input type="text" name="mail" placeholder="Mejl" required [(ngModel)]="mail" ngModel pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <input type="file" name="image" (change)="onFileSelected($event)">
+        <button (click)="form.checkValidity()? signup() : null" *ngIf="user == null">Registruj se</button>
+        <button (click)="form.checkValidity()? signup() : null" *ngIf="user != null">Dodaj korisnika</button>
+      </form>  
+    </div>
+  </div>
+<br/>

@@ -1,0 +1,84 @@
+<div class="book">
+    <div class="table-responsive">
+<table class="table">
+    <tr>
+        <td class="row">
+            Slika:
+        </td>
+        <td>
+            <input type="file" name="image" (change)="onFileSelected($event)">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Naslov:
+        </td>
+        <td>
+            <input type="text" name="title" [(ngModel)]="title">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Autor/i:
+        </td>
+        <td>
+            <input type="text" name="author" [(ngModel)]="author">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Zanr:
+        </td>
+        <td>
+            <select multiple required size="3" [(ngModel)]="genre_input" [ngModelOptions]="{standalone: true}" (change)="changeSelect()">
+                <option [disabled]="genre_input.length == 3 && !genre.includes('istorijska fikcija')" value="istorijska fikcija">Istorijska fikcija</option>
+                <option [disabled]="genre_input.length == 3 && !genre.includes('istorijski roman')" value="istorijski roman">Istorijski roman</option>
+                <option [disabled]="genre_input.length == 3 && !genre.includes('fantastika')" value="fantastika">Fantastika</option>
+                <option [disabled]="genre_input.length == 3 && !genre.includes('drama')" value="drama">Drama</option>
+                <option [disabled]="genre_input.length == 3 && !genre.includes('tragedija')" value="tragedija">Tragedija</option>
+              </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Izdavac:
+        </td>
+        <td>
+            <input type="text" name="publisher" [(ngModel)]="publisher">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Godina:
+        </td>
+        <td>
+            <input type="text" name="year" [(ngModel)]="year">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Jezik:
+        </td>
+        <td>
+            <input type="text" name="language" [(ngModel)]="language">
+        </td>
+    </tr>
+    <tr>
+        <td class="row">
+            Na stanju:
+        </td>
+        <td>
+            <input type="text" name="in_stock" [(ngModel)]="in_stock">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="my_btn" (click)="updateBook()">Azuriraj</button>
+        </td>
+        <td>
+            <button class="my_btn" (click)="dismiss()">Otkazi</button>
+        </td>
+    </tr>
+</table>
+</div>
+</div>

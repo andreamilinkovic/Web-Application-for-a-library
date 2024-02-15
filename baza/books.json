@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "62fcbcacd559b1e4379a8301"
+  },
+  "id": 1,
+  "title": "Na Drini cuprija",
+  "author": "Ivo Andric",
+  "genre": [
+    "istorijski roman"
+  ],
+  "publisher": "Laguna",
+  "year": "2010",
+  "language": "srpski",
+  "image": "na_drini_cuprija.jpg",
+  "in_stock": 19,
+  "booked": 3
+},{
+  "_id": {
+    "$oid": "62fcbceed559b1e4379a830d"
+  },
+  "id": 2,
+  "title": "Igra prestola",
+  "author": "Dzordz R. R. Martin",
+  "genre": [
+    "fantastika",
+    "drama",
+    "tragedija"
+  ],
+  "publisher": "Delfi",
+  "year": "2020",
+  "language": "engleski",
+  "image": "igra_prestola.jpg",
+  "in_stock": 2,
+  "booked": 2
+},{
+  "_id": {
+    "$oid": "62fcbd01d559b1e4379a8312"
+  },
+  "id": 3,
+  "title": "Gospodar prstenova",
+  "author": "Dz. R. R. Tolkin",
+  "genre": [
+    "fantastika"
+  ],
+  "publisher": "Vulkan",
+  "year": "2017",
+  "language": "engleski",
+  "image": "gospodar_prstenova.jpg",
+  "in_stock": 0,
+  "booked": 6
+},{
+  "_id": {
+    "$oid": "63038f2136e790922d7b9c75"
+  },
+  "id": 4,
+  "title": "Ana Karenjina",
+  "author": "Lav Tolstoj",
+  "genre": [
+    "istorijski roman",
+    "drama",
+    "tragedija"
+  ],
+  "publisher": "Vulkan",
+  "year": "1999",
+  "language": "ruski",
+  "image": "knjiga_podrazumevano.jpg",
+  "in_stock": 3,
+  "booked": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6303ce1ac16a7a44de6d9739"
+  },
+  "id": 5,
+  "title": "Tvrdjava",
+  "author": "Mesa Selimovic",
+  "genre": [
+    "istorijski roman"
+  ],
+  "publisher": "Laguna",
+  "year": "2006",
+  "language": "srpski",
+  "image": "tvrdjava.jpg",
+  "in_stock": 8,
+  "booked": 1
+},{
+  "_id": {
+    "$oid": "6306425d687ad085452c91fb"
+  },
+  "id": 6,
+  "title": "Hari Poter i zatvorenik iz Askabana",
+  "author": "Dz. K. Roling",
+  "genre": [
+    "fantastika",
+    "drama"
+  ],
+  "publisher": "Vulkan",
+  "year": "2000",
+  "language": "engleski",
+  "image": "hari_poter_i_zatvorenik_iz_askabana.jpg",
+  "in_stock": 4,
+  "booked": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dde13b79cae6891483168"
+  },
+  "id": 7,
+  "title": "Istorija Srba",
+  "author": "Vladimir Corovic, Milan St. Protic",
+  "genre": [
+    "istorijski roman"
+  ],
+  "publisher": "Vulkan",
+  "year": "2012",
+  "language": "srpski",
+  "image": "knjiga_podrazumevano.jpg",
+  "in_stock": 3,
+  "booked": 2,
+  "__v": 0
+}]

@@ -1,0 +1,132 @@
+<div *ngIf="message == 'Korisnik sa zadatim mejlom vec postoji.'" class="alert alert-danger" role="alert">
+    {{message}}
+</div>
+
+<div class="table-responsive">
+<div class="profile">
+    <table class="table">
+        <tr>
+            <td class="row">
+                Ime
+            </td>
+            <td *ngIf="update_flag == false">
+                {{user.firstname}}
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="text" class="form-control" name="firstname" [(ngModel)]="firstname">
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Prezime
+            </td>
+            <td *ngIf="update_flag == false">
+                {{user.lastname}}
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="text" class="form-control" name="lastname" [(ngModel)]="lastname">
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Adresa
+            </td>
+            <td *ngIf="update_flag == false">
+                {{user.address}}
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="text" class="form-control" name="address" [(ngModel)]="address">
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Telefon
+            </td>
+            <td *ngIf="update_flag == false">
+                {{user.tel}}
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="text" class="form-control" name="tel" [(ngModel)]="tel">
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Mejl
+            </td>
+            <td *ngIf="update_flag == false">
+                {{user.mail}}
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="text" class="form-control" name="mail" [(ngModel)]="mail">
+            </td>
+        </tr>
+        <tr>
+            <td class="row">
+                Tip
+            </td>
+            <td>
+                {{user.type}}
+            </td>
+        </tr>
+        <tr>
+            <td  class="row">
+                Slika
+            </td>
+            <td *ngIf="update_flag == false">
+                <img src="../../assets/{{user.image}}" style="height: 50px">
+            </td>
+            <td *ngIf="update_flag == true">
+                <input type="file" class="form-control" name="image" (change)="onFileSelected($event)">
+            </td>
+        </tr>
+    
+        <tr>
+            <td *ngIf="update_flag == false && user.blocked == false">
+                <button class="my_btn" (click)="setUpdate_flag(true)">Izmeni podatke</button>
+            </td>
+            <td *ngIf="update_flag == true">
+                <button class="my_btn" (click)="updateProfile()">Azuriraj</button>
+            </td>
+            <td *ngIf="update_flag == true">
+                <button class="my_btn" (click)="setUpdate_flag(false)">Otkazi</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+
+
+<!--books_per_year-->
+<div class="wrapper">
+    <div class="grafico">
+        <div class="content">
+            <div class="bars" *ngFor="let item of book_map | keyvalue: asIsOrder">
+                <span>{{item.value}}</span>
+                <div class="bar" style="background-color: #0a1121d9; height: {{(10 * item.value)}}px"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="legends">
+            <span *ngFor="let item of book_map | keyvalue: asIsOrder">{{item.key}}</span>
+        </div>
+    </div>
+</div>
+<div class="text">Broj procitanih knjiga u poslednjih godinu dana</div>
+
+
+<!--genres-->
+<div class="wrapper">
+    <div class="grafico">
+        <div class="content">
+            <div class="bars" *ngFor="let item of genre_map | keyvalue">
+                <span>{{item.value}}</span>
+                <div class="bar" style="background-color: #0a1121d9; height: {{(10 * item.value)}}px"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="legends">
+            <span *ngFor="let item of genre_map | keyvalue">{{item.key}}</span>
+        </div>
+    </div>
+</div>
+<div class="text">Broj procitanih knjiga po zanru</div>

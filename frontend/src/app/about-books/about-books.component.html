@@ -1,0 +1,34 @@
+<div class="table-responsive">
+<table class="table" *ngIf="all_books.length > 0">
+    <tr>
+        <th>Korice</th>
+        <th>Naslov</th>
+        <th>Autor</th>
+        <th>Zanr</th>
+        <th>Izdavac</th>
+        <th>Godina</th>
+        <th>Jezik</th>
+        <th>Na stanju</th>
+    </tr>
+    <tr *ngFor="let b of all_books">
+        <td><img src="../../assets/{{b.image}}" alt="Slika"></td>
+        <td>{{b.title}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.genre}}</td>
+        <td>{{b.publisher}} </td>
+        <td>{{b.year}}</td>
+        <td>{{b.language}}</td>  
+        <td>{{b.in_stock}}</td>
+        <td><button class="my_btn" (click)="updateBook(b.id)">Azuriraj</button></td>   
+        <td><button class="my_btn" (click)="deleteBook(b)">Obrisi</button></td>    
+    </tr>
+</table>
+</div>
+
+<div class="buttons">
+    <button class="my_btn" (click)="addBook()" *ngIf="period_flag == false">Dodaj novu knjigu</button>
+    <button class="my_btn" (click)="changePeriod()" *ngIf="period_flag == false">Period zaduzivanja</button>
+    <input type="text" name="period" placeholder="{{period}}" style="width: 50px; margin-left: 1%" *ngIf="period_flag == true" [(ngModel)]="period">
+    <button class="my_btn" *ngIf="period_flag == true" (click)="definePeriod()">Promeni</button>
+    <button class="my_btn" *ngIf="period_flag == true" (click)="dismiss()">Otkazi</button>
+</div>

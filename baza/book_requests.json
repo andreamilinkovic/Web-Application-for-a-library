@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "630367cd4938c5dcaf975029"
+  },
+  "title": "Ana Karenjina",
+  "author": "Lav Tolstoj",
+  "genre": [
+    "istorijski roman",
+    "drama",
+    "tragedija"
+  ],
+  "publisher": "Vulkan",
+  "year": "1999",
+  "language": "ruski",
+  "image": "knjiga_podrazumevano.jpg",
+  "person": "maja",
+  "accepted": true
+},{
+  "_id": {
+    "$oid": "6305e4dce78e3f629681b171"
+  },
+  "title": "Rani jadi",
+  "author": "Danilo Kis",
+  "genre": [
+    "istorijski roman",
+    "drama"
+  ],
+  "publisher": "Laguna",
+  "year": "2003",
+  "language": "srpski",
+  "image": "knjiga_podrazumevano.jpg",
+  "person": "pera",
+  "accepted": false,
+  "__v": 0
+}]

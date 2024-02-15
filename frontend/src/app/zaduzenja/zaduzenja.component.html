@@ -1,0 +1,27 @@
+<div class="zaduzenja">
+<div class="card" *ngFor="let b of rented_books">
+    <img class="card-img-top" src="../../assets/{{b.image}}" alt="Card image cap">
+    <div class="card-body" style="text-align: left">
+      <h5 class="card-title">{{b.title}}</h5>
+      <p class="card-text">
+        {{b.author}} <br/>
+        <span *ngIf="!overDeadline(b.deadline)">
+            Rok istice <span *ngIf="daysUntilDeadline(b.deadline) != 0">za {{daysUntilDeadline(b.deadline)}} dan/a</span>
+            <span *ngIf="daysUntilDeadline(b.deadline) == 0">danas</span>  <br/>
+        </span> 
+        <span *ngIf="overDeadline(b.deadline)" style="color: red">
+            <span>Rok je istekao pre {{daysUntilDeadline(b.deadline)}} dan/a</span> <br/>
+        </span>
+        <button class="btn" (click)="book(b.book)" *ngIf="user.blocked == false">O knjizi</button>
+        <button class="btn" (click)="razduzi(b.book)">Razduzi</button>
+        <span *ngIf="!b.extended">
+            <button class="btn" (click)="extendDeadline(b.id)" *ngIf="user.blocked == false">Produzi</button>
+        </span>
+      </p>
+    </div>
+</div>
+</div>
+
+<div *ngIf="message == 'Nemate nijednu zaduzenu knjigu.'" class="alert alert-success" role="alert">
+    {{message}}
+</div>

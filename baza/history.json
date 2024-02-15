@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "630dd155b79cae6891482f25"
+  },
+  "id": "1",
+  "book": "1",
+  "title": "Na Drini cuprija",
+  "author": "Ivo Andric",
+  "image": "na_drini_cuprija.jpg",
+  "person": "pera",
+  "booked": "2022-8-30",
+  "deadline": "2022-9-13",
+  "returned": "",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dd1deb79cae6891482f60"
+  },
+  "id": "2",
+  "book": "2",
+  "title": "Igra prestola",
+  "author": "Dzordz R. R. Martin",
+  "image": "igra_prestola.jpg",
+  "person": "pera",
+  "booked": "2022-8-5",
+  "deadline": "2022-8-19",
+  "returned": "",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dd331b79cae6891482fba"
+  },
+  "id": "3",
+  "book": "4",
+  "title": "Ana Karenjina",
+  "author": "Lav Tolstoj",
+  "image": "knjiga_podrazumevano.jpg",
+  "person": "pera",
+  "booked": "2022-8-10",
+  "deadline": "2022-8-24",
+  "returned": "2022-8-21",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dd5da15ad7189fbadf6f8"
+  },
+  "id": "3",
+  "book": "4",
+  "title": "Ana Karenjina",
+  "author": "Lav Tolstoj",
+  "image": "knjiga_podrazumevano.jpg",
+  "person": "maja",
+  "booked": "2021-10-10",
+  "deadline": "2021-10-24",
+  "returned": "2021-10-27",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dd605b79cae6891483038"
+  },
+  "id": "5",
+  "book": "5",
+  "title": "Tvrdjava",
+  "author": "Mesa Selimovic",
+  "image": "tvrdjava.jpg",
+  "person": "pera",
+  "booked": "2021-11-6",
+  "deadline": "2021-11-20",
+  "returned": "2021-11-19",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630dd704b79cae6891483050"
+  },
+  "id": "6",
+  "book": "6",
+  "title": "Hari Poter i zatvorenik iz Askabana",
+  "author": "Dz. K. Roling",
+  "image": "hari_poter_i_zatvorenik_iz_askabana.jpg",
+  "person": "pera",
+  "booked": "2021-11-11",
+  "deadline": "2021-11-25",
+  "returned": "2021-11-28",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630ddee5b79cae689148319d"
+  },
+  "id": "7",
+  "book": "7",
+  "title": "Istorija Srba",
+  "author": "Vladimir Corovic, Milan St. Protic",
+  "image": "knjiga_podrazumevano.jpg",
+  "person": "maja",
+  "booked": "2022-8-30",
+  "deadline": "2022-9-6",
+  "returned": "",
+  "extended": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630de099b79cae6891483200"
+  },
+  "id": "8",
+  "book": "3",
+  "title": "Gospodar prstenova",
+  "author": "Dz. R. R. Tolkin",
+  "image": "gospodar_prstenova.jpg",
+  "person": "maja",
+  "booked": "2022-8-20",
+  "deadline": "2022-9-3",
+  "returned": "",
+  "extended": false,
+  "__v": 0
+}]
